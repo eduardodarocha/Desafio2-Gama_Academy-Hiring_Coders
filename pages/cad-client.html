@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../style/reset.css">
+  <link rel="stylesheet" href="../style/cad-client.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Sistema de Gestão de Cadastros</title>
+</head>
+<body>
+  <div class="wrap-content">
+    <div class="cadastro">
+      <div class="title">
+        <h1>Cadastro de clientes </h1>            
+      </div>
+      <div class="links">
+
+        <form>
+          
+          <div>
+            <input type="text" id="nome" placeholder="Nome completo" />
+          </div>
+          <div>
+            <input type="email" id="email" placeholder="E-mail" />
+          </div>
+          <div>
+            <input type="password" id="password" oninput="mascara(this, 'pass')" placeholder="Senha" />
+          </div>
+          <div>
+            <input type="text" id="cpf" inputmode="number" minlength="11" maxlength="11" placeholder="CPF" 
+              required autocomplete="off" oninput="mascara(this, 'cpf')">
+          </div>
+          <div>
+            <input type="text" name="datanasc" maxlength="10" OnKeyPress="formatar('##/##/##', this)"  oninput="mascara(this, 'data')" placeholder="Data de Nascimento" >
+            <!-- <input type="date" id="dtnasc" placeholder="Data de Nascimento" /> -->
+          </div>
+          <div>
+            <input type="text" name="telefone" maxlength="16" placeholder="Telefone" oninput="mascara(this, 'tel')" />
+          </div>
+ 
+          <div class="button" id="button">
+            <button id="enviar" type="button">Quero me cadastrar</button>
+          </div>
+        </form>
+        <!-- <a href="../index.html">Teste de clientes</a>
+        <a href="../index.html">Teste de clientes</a> -->
+        <!-- <button type="">clientes</button>
+        <button type="">produtos</button>-->
+      </div>
+    </div>
+    <div class="background"></div>
+  </div>  
+</body>
+<script src="../script/script.js"></script>
+</html>
