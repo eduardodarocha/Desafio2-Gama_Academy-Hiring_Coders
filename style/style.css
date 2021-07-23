@@ -22,15 +22,19 @@ body {
   width: 50vw;
   height: 100vh;
   display:block;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: space-around;  */
   margin: 1rem;
 }
-.title {
-  font-size: 1.5rem;
-  align-items: center;
-  justify-content: center;
+
+h1 {
+  width: 67%;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 2.75rem;
+  font-weight: 500;
+  margin: 3rem 0rem 0 7.75rem;
+  padding: 1rem;
+  border: 2px solid #03fbeb;
+  text-align: center;
+  border-radius: 15px;
 }
 
 .links {
@@ -45,12 +49,16 @@ body {
 .links a {
   font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
-  width: 200px;
+  font-weight: 500;
+  width: 250px;
   padding: .75rem;
   margin: 0 .5rem;
   border: 2px solid #777;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 12px;
   text-decoration:none;
-
+  background-color: #03fbeb;
+}
+.links a:hover {
+  background-color: #ff86e8;
 }
