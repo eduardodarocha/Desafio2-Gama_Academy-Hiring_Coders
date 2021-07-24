@@ -22,7 +22,7 @@
         <form id="cad-produto">
           <section class= "gap grid grid-template">          
             <div class="item item-nome-prod">
-              <input type="text" id="nome-prod" placeholder="Nome do produto" />
+              <input type="text" id="nome-prod" required placeholder="Nome do produto" />
             </div>
             <div class=" item item-code">
               <input type="text" id="code" placeholder="Código do produto" />
@@ -30,24 +30,30 @@
             <div class="item item-tipo">
               <input type="text" id="tipo" placeholder="Tipo" />
             </div>
-            <div class="item item-unidade">
-              <input type="text" id="unidade" placeholder="Unidade" />
-            </div>
-            <div class="item item-peso">
-              <input type="text" id="peso" placeholder="Peso(kg)" />
-            </div>
-            <div class="item item-dt-inclusao">
-              <input type="text" id="dt-inclusao" maxlength="10"  oninput="mascara(this, 'data')" placeholder="Data de inclusao" >
-            </div>            
             <div class="item item-fabricante">
               <input type="text" id="fabricante" placeholder="Fabricante" />
             </div>
             <div class="item item-modelo">
               <input type="text" id="modelo" placeholder="Modelo" />
             </div>
-            <div class="item item-preco">
-              <input type="text" id="preco" placeholder="Preço" />
+            <div class="item item-fornecedor">
+              <input type="text" id="fornecedor" placeholder="Fornecedor" />
             </div>
+            <div class="item item-unidade">
+              <input type="text" id="unidade" placeholder="Unidade" />
+            </div>
+            <div class="item item-quantidade">
+              <input type="text" id="quantidade" placeholder="Quantidade" />
+            </div>
+            <div class="item item-peso">
+              <input type="text" id="peso" onblur="mascara(this, 'peso')" placeholder="Peso(kg)" />
+            </div>
+            <div class="item item-preco">
+              <input type="text" id="preco" onblur="mascara(this, 'preco')" placeholder="Preço" />
+            </div>
+            <div class="item item-dt-inclusao">
+              <input type="text" id="dt-inclusao" maxlength="10"  oninput="mascara(this, 'data'), validDate(this)" placeholder="Data de inclusão" >
+            </div>             
             <div class="item item-descricao">
               <input type="text" id="end-descricao" placeholder="Descrição" />
             </div>
@@ -55,13 +61,13 @@
           </form>
         </div>
         <div class="button" id="button-cadastro">
-          <button id="enviar" type="button" form="cad-cliente">
-            Cadastrar
+          <button id="cadastrar-prod" type="button" form="cad-produto">
+            Cadastrar produto
           </button>
       </div>
     </div>
     <div class="background"></div>
   </div>  
 </body>
-<script src="../script/script.js"></script>
+<script src="../script/scriptprod.js"></script>
 </html>

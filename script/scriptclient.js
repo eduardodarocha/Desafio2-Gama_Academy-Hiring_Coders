@@ -11,6 +11,7 @@ function mascara(i, t) {
    if (t == "data") {
       i.setAttribute("maxlength", "10");
       isnumber();
+      
       if (v.length == 2 || v.length == 5) i.value += "/";
    }
 
@@ -44,8 +45,21 @@ function mascara(i, t) {
       }
    }
 }
+//Validar data
+function validDate(i) {
+   let v = i.value;
+   let dateregex = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(1[8][9]\d|1[9][0-9]\d|2[0]\d\d)$/;
+   let data = new Date();
+   let ano = data.getFullYear();
+   let dataAno = v.substring(6,10);
+  if ((v.length == 10 && !dateregex.test(v)) || dataAno > ano) {  
+      i.value = '';
+      return;
+   }
+}
 
-// Armazena dados no localStorage
+
+// Armazena dados do Cliente no localStorage
 document.getElementById('enviar').addEventListener('click', function (e) {
    e.preventDefault();
 

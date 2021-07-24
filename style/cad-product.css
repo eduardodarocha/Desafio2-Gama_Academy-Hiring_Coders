@@ -62,20 +62,29 @@ h1 {
 .item-tipo {
   grid-area: item-tipo ;
 }
-.item-peso {
-  grid-area: item-peso ;
-}
-.item-dt-inclusao {
-  grid-area: item-dt-inclusao ;
-}
-.item-preco {
-  grid-area: item-preco ;
-}
 .item-fabricante {
   grid-area: item-fabricante ;
 }
 .item-modelo {
   grid-area: item-modelo ;
+}
+.item-fornecedor {
+  grid-area: item-fornecedor ;
+}
+.item-unidade {
+  grid-area: item-unidade ;
+}
+.item-quantidade {
+  grid-area: item-quantidade ;
+}
+.item-peso {
+  grid-area: item-peso ;
+}
+.item-preco {
+  grid-area: item-preco ;
+}
+.item-dt-inclusao {
+  grid-area: item-dt-inclusao ;
 }
 .item-descricao {
   grid-area: item-descricao ;
@@ -86,9 +95,10 @@ h1 {
 	grid-template-areas:
 		"item-nome-prod item-nome-prod"
 		"item-code item-tipo"
-    "item-unidade item-peso"
-    "item-dt-inclusao item-fabricante"
-    "item-modelo item-preco"
+    "item-fabricante item-modelo "
+    "item-fornecedor item-unidade"
+    "item-quantidade item-peso"
+    "item-preco item-dt-inclusao  "
     "item-descricao item-descricao"
 }
 
@@ -111,7 +121,7 @@ h1 {
   row-gap: 10px;
 }
 
-#enviar {
+#cadastrar-prod {
   width: 16rem;
     height: 3rem;
     display: inline-block;
@@ -129,11 +139,11 @@ h1 {
     border-radius: 15px;
     box-shadow: 0 7px #5555557d;
 }
-#enviar:hover {
+#cadastrar-prod:hover {
   background-color:#ff86e8;
 }
 
-#enviar:active {
+#cadastrar-prod:active {
   background-color: #5366f4;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
