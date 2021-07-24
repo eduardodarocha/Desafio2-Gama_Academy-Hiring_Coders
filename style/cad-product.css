@@ -21,36 +21,127 @@ body {
 .cadastro {
   width: 50vw;
   height: 100vh;
-  display:block;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: space-around;  */
+  display:flex;
+  flex-direction: column;
   margin: 1rem;
 }
-.title {
-  font-size: 1.5rem;
-  align-items: center;
-  justify-content: center;
-}
 
-.links {
+#title {
   display: flex;
+  align-items: center;
+}
+h1 {
+  width: 67%;
+  /* max-width: 75%; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  margin: 2rem 0 0 7rem;
+  padding: 0.5rem 0 .5rem 0;
+  border: 2px solid #03fbeb;
+  text-align: center;
+  border-radius: 15px;
+}
+.product-content {
   width: 100%;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  margin-top: 8rem;
-  
+  margin-top: 1.5rem;  
 }
-.links a {
-  font-size: 1rem;
+
+
+.grid {
+  display: grid;
+}
+.item-nome-prod {
+  grid-area: item-nome-prod ;
+}
+.item-code {
+  grid-area: item-code ;
+}
+.item-tipo {
+  grid-area: item-tipo ;
+}
+.item-peso {
+  grid-area: item-peso ;
+}
+.item-dt-inclusao {
+  grid-area: item-dt-inclusao ;
+}
+.item-preco {
+  grid-area: item-preco ;
+}
+.item-fabricante {
+  grid-area: item-fabricante ;
+}
+.item-modelo {
+  grid-area: item-modelo ;
+}
+.item-descricao {
+  grid-area: item-descricao ;
+}
+
+.grid-template {
+  grid-template-columns: 50% 50%;
+	grid-template-areas:
+		"item-nome-prod item-nome-prod"
+		"item-code item-tipo"
+    "item-unidade item-peso"
+    "item-dt-inclusao item-fabricante"
+    "item-modelo item-preco"
+    "item-descricao item-descricao"
+}
+
+.grid {
+	max-width: 75%;
+	margin: 0 auto;
+	/* border: 1px solid rgb(10, 10, 10); */
+}
+.item  input{
   font-family: 'Montserrat', sans-serif;
-  width: 200px;
-  padding: .75rem;
-  margin: 0 .5rem;
-  border: 2px solid #777;
-  text-align: center;
-  border-radius: 15px;
-  text-decoration:none;
+  width: 100%;
+  padding: .7rem;
+  margin: auto;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 10px;
+
+}
+.gap {
+  column-gap: 2rem;
+  row-gap: 10px;
+}
+
+#enviar {
+  width: 16rem;
+    height: 3rem;
+    display: inline-block;
+    padding: 15px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 16rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: #03fbeb;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px #5555557d;
+}
+#enviar:hover {
+  background-color:#ff86e8;
+}
+
+#enviar:active {
+  background-color: #5366f4;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+img {
+width: 45px;
+height: 45px;
+margin-top: 40px;
 
 }

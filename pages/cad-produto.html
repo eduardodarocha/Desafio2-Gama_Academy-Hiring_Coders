@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,21 +10,58 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <title class="title">Cadastro de Produtos</title>
-  </head>
+</head>
 <body>
   <div class="wrap-content">
     <div class="cadastro">
-      <div class="title">
-        <h1>Cadastro de Produtos</h1>            
-      </div>
-      <div class="links">
-        <a href="../index.html">Teste de produto</a>
-        <a href="../index.html">Teste de produto</a>
-        <!-- <button type="">clientes</button>
-        <button type="">produtos</button> -->
+      <div id="title">
+        <a href="../index.html"><img src="../misc/home-icon.png" alt=""></a>
+         <h1>Cadastro de produtos</h1>            
+       </div>
+       <div class="product-content">       
+        <form id="cad-produto">
+          <section class= "gap grid grid-template">          
+            <div class="item item-nome-prod">
+              <input type="text" id="nome-prod" placeholder="Nome do produto" />
+            </div>
+            <div class=" item item-code">
+              <input type="text" id="code" placeholder="Código do produto" />
+            </div>
+            <div class="item item-tipo">
+              <input type="text" id="tipo" placeholder="Tipo" />
+            </div>
+            <div class="item item-unidade">
+              <input type="text" id="unidade" placeholder="Unidade" />
+            </div>
+            <div class="item item-peso">
+              <input type="text" id="peso" placeholder="Peso(kg)" />
+            </div>
+            <div class="item item-dt-inclusao">
+              <input type="text" id="dt-inclusao" maxlength="10"  oninput="mascara(this, 'data')" placeholder="Data de inclusao" >
+            </div>            
+            <div class="item item-fabricante">
+              <input type="text" id="fabricante" placeholder="Fabricante" />
+            </div>
+            <div class="item item-modelo">
+              <input type="text" id="modelo" placeholder="Modelo" />
+            </div>
+            <div class="item item-preco">
+              <input type="text" id="preco" placeholder="Preço" />
+            </div>
+            <div class="item item-descricao">
+              <input type="text" id="end-descricao" placeholder="Descrição" />
+            </div>
+          </section>                      
+          </form>
+        </div>
+        <div class="button" id="button-cadastro">
+          <button id="enviar" type="button" form="cad-cliente">
+            Cadastrar
+          </button>
       </div>
     </div>
     <div class="background"></div>
   </div>  
 </body>
+<script src="../script/script.js"></script>
 </html>

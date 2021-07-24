@@ -1,126 +1,109 @@
-// function formatar(mascara, documento){
-//   var i = documento.value.length;
-//   var v = documento.value;
-//   var saida = mascara.substring(0,1);
-//   var texto = mascara.substring(i)
-  
-//   if (texto.substring(0,1) != saida){
-//             documento.value += texto.substring(0,1);
-//   }
-// }
+function mascara(i, t) {
+   let v = i.value;
 
-function mascara(i,t){
+   function isnumber() {
+      if (isNaN(v[v.length - 1])) {
+         i.value = v.substring(0, v.length - 1);
+         return;
+      }
+   }
 
-  let v = i.value;
-function isnumber() {
-  if(isNaN(v[v.length-1])){
-    i.value = v.substring(0, v.length-1);
-    return;
- }
-  
+   if (t == "data") {
+      i.setAttribute("maxlength", "10");
+      isnumber();
+      if (v.length == 2 || v.length == 5) i.value += "/";
+   }
+
+   if (t == "cpf") {
+      i.setAttribute("maxlength", "14");
+      isnumber();
+      if (v.length == 3 || v.length == 7) i.value += ".";
+      if (v.length == 11) i.value += "-";
+   }
+
+   if (t == "pass") {
+      i.setAttribute("maxlength", "8");
+   }
+
+   if (t == "cep") {
+      i.setAttribute("maxlength", "9");
+      isnumber();
+      if (v.length == 5) i.value += "-";
+   }
+
+   if (t == "tel") {
+      isnumber();
+      if (v.length == 2) i.value = "(" + v + ") ";
+
+      if (v[5] == 9) {
+         i.setAttribute("maxlength", "15");
+         if (v.length == 10) i.value += "-";
+      } else {
+         i.setAttribute("maxlength", "14");
+         if (v.length == 9) i.value += "-";
+      }
+   }
 }
 
-
-  if(t == "data"){
-     i.setAttribute("maxlength", "10");
-     isnumber();     
-     if (v.length == 2 || v.length == 5) i.value += "/";
-  }
-
-  if(t == "cpf"){
-     i.setAttribute("maxlength", "14");
-     isnumber();
-     if (v.length == 3 || v.length == 7) i.value += ".";
-     if (v.length == 11) i.value += "-";
-  }
-
-  if(t == "pass"){
-     i.setAttribute("maxlength", "8");    
-  }
-  if(t == "cep"){
-    i.setAttribute("maxlength", "9");
-    isnumber();
-    if (v.length == 5) i.value += "-";
- }
-
- if(t == "tel"){
-  isnumber();
-   if (v.length == 2) i.value = "(" + v + ") ";
-
-    if(v[5] == 9){
-       i.setAttribute("maxlength", "15");
-       if (v.length == 10) i.value += "-";
-    }else{
-       i.setAttribute("maxlength", "14");
-       if (v.length == 9) i.value += "-";
-    }
-  }
-}
-
+// Armazena dados no localStorage
 document.getElementById('enviar').addEventListener('click', function (e) {
-  e.preventDefault();
+   e.preventDefault();
 
-  // Armazena email no localStorage
-  let nome = document.getElementById('nome');
-  let email = document.getElementById('email');
-  let password = document.getElementById('password');
-  let cpf = document.getElementById('cpf');
-  let dtnasc = document.getElementById('dtnasc');
-  let telefone = document.getElementById('telefone');
-  let cep = document.getElementById('cep');
-  let endereco = document.getElementById('endereco');
-  let numero = document.getElementById('numero');
-  let complemento = document.getElementById('end-complemento');
-  let bairro = document.getElementById('bairro');
-  let cidade = document.getElementById('cidade');
-  let estado = document.getElementById('estado');
+   let nome = document.getElementById('nome');
+   let email = document.getElementById('email');
+   let password = document.getElementById('password');
+   let cpf = document.getElementById('cpf');
+   let dtnasc = document.getElementById('dtnasc');
+   let telefone = document.getElementById('telefone');
+   let cep = document.getElementById('cep');
+   let endereco = document.getElementById('endereco');
+   let numero = document.getElementById('numero');
+   let complemento = document.getElementById('end-complemento');
+   let bairro = document.getElementById('bairro');
+   let cidade = document.getElementById('cidade');
+   let estado = document.getElementById('estado');
 
-  
+   let obj;
+   obj = {
+      nome: nome.value,
+      email: email.value,
+      password: password.value,
+      cpf: cpf.value,
+      dtnasc: dtnasc.value,
+      telefone: telefone.value,
+      cep: cep.value,
+      endereco: endereco.value,
+      numero: numero.value,
+      complemento: complemento.value,
+      bairro: bairro.value,
+      cidade: cidade.value,
+      estado: estado.value
+   };
 
-  let obj;
-  obj = {
-    nome: nome.value,
-    email: email.value,
-    password: password.value,
-    cpf: cpf.value,
-    dtnasc: dtnasc.value,
-    telefone: telefone.value,
-    cep: cep.value,
-    endereco: endereco.value,
-    numero: numero.value,
-    complemento: complemento.value,
-    bairro: bairro.value,
-    cidade: cidade.value,
-    estado: estado.value
-};
+   localStorage[cpf.value] = JSON.stringify(obj);
+   nome.value = "";
+   email.value = "";
+   password.value = "";
+   cpf.value = "";
+   dtnasc.value = "";
+   telefone.value = "";
+   cep.value = "";
+   endereco.value = "";
+   numero.value = "";
+   complemento.value = "";
+   bairro.value = "";
+   cidade.value = "";
+   estado.value = "";
 
-  localStorage[cpf.value] = JSON.stringify(obj);
-  nome.value = "";
-  email.value = "";
-  password.value = "";
-  cpf.value = "";
-  dtnasc.value = "";
-  telefone.value = "";
-  cep.value = "";
-  endereco.value = "";
-  numero.value = "";
-  complemento.value = "";
-  bairro.value = "";
-  cidade.value = "";
-  estado.value = "";
-
-  let textButton = document.getElementById('enviar')
-
-//   let msgLoading = `<button id="enviar" type="button">Carregando...</button>`
+   let textButton = document.getElementById('enviar')
    let msgLoading = `Carregando...`
    let msgSuccess = `Cadastrado com sucesso`
-   // let msgSuccess = `<button id="enviar" type="button">Cadastrado com sucesso</button>`
    textButton.textContent = msgLoading;
-  setTimeout(() => {
-    textButton.textContent = msgSuccess
-  }, 1000)
-  nome.onfocus = function(){
-   textButton.textContent = "Cadastrar novo cliente"
-}
+   setTimeout(() => {
+      textButton.textContent = msgSuccess
+   }, 1000)
+   nome.onfocus = function () {
+      textButton.textContent = "Cadastrar novo cliente"
+   }
 
 });
