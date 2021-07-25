@@ -14,10 +14,10 @@
 - Ícone de Home para voltar para página inicial.
   
 ## Página Inicial
-  ![Imagem Página inicial](./image/pagina_inicial.png)
+  ![Imagem Página inicial](image/Pagina_inicial.png)
 
 ## Página de cadastro de clientes
-  ![Imagem Página de cadastro de clientes](./image/pagina_cadastro_cliente.png)
+  ![Imagem Página de cadastro de clientes](image/Pagina_de_cadastro_de_clientes.png)
 
   ## Página de cadastro de produtos
-  ![Imagem Página de cadastro de clientes](./image/pagina_cadastro_produto.png)
+  ![Imagem Página de cadastro de clientes](image/pagina_cadastro_produto.png)
