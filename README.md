@@ -17,7 +17,7 @@
   ![Imagem Página inicial](image/Pagina_inicial.png)
 
 ## Página de cadastro de clientes
-  ![Imagem Página de cadastro de clientes](image/Pagina_cadastro_clientes.png)
+  ![Imagem Página de cadastro de clientes](image/Pagina_cadastro_cliente.png)
 
   ## Página de cadastro de produtos
   ![Imagem Página de cadastro de clientes](image/Pagina_cadastro_produto.png)
