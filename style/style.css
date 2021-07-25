@@ -14,7 +14,7 @@ body {
 .background {
   width: 45vw;
   height: 100vh;
-  background-image: url("../misc/back2.jpg");
+  background-image: url("../image/back2.jpg");
   background-size: cover;
   margin: 1rem;
 }
